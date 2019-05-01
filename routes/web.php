@@ -13,7 +13,7 @@ $router->get('/validate', function (\Illuminate\Http\Request $request) {
     $word = \App\Word::latest()->firstOrFail();
     $word->increment('attempts');
     if($word->attempts > 5){
-        sleep($word->attempts / 6);
+        // sleep($word->attempts / 6);
     }
 
     if ($word && $request->password == $word->value) {
