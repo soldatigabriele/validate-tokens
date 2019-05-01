@@ -22,7 +22,7 @@ $router->get('/validate', function (\Illuminate\Http\Request $request) {
         \App\Word::create([
             'value' => $newWord,
         ]);
-        return response(['status' => 'ok'], 200);
+        return response(['status' => 'ok', 'unlock' => 'valid'], 200);
     }
     return response(['status' => 'ko'], 403);
 });
