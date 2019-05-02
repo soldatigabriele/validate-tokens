@@ -26,3 +26,10 @@ $router->get('/validate', function (\Illuminate\Http\Request $request) {
     }
     return response(['status' => 'ko'], 403);
 });
+
+$router->get('/monitor', function (\Illuminate\Http\Request $request) {
+    if ($request->auth !== 'dBKacly60aKb6AmRGMpO') {
+        return 'Not authorized';
+    }
+    return view('monitor')->with(['words' => \App\Word::all()]);
+});
