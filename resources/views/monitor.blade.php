@@ -19,6 +19,12 @@
     </style>
 </head>
 <body>
+
+
+<br>
+The next password is: <span style="margin:0 0 10px 0;font-size: 20px;font-weight:600;">{{ \App\Word::latest()->first()->value }}</span>
+<br>
+<br>
     <table>
         <thead>
             <th>Id</th>
