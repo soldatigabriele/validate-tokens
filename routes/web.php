@@ -38,8 +38,6 @@ $router->get('/monitor', function (\Illuminate\Http\Request $request) {
 
 
 
-
-
 /*
 |--------------------------------------------------------------------------
 | WH
@@ -60,4 +58,16 @@ Route::get('/wh', function (Request $request) {
     $challenge = $request->hub_challenge;
     info($challenge);
     return $challenge;
+});
+
+Route::get('/privacy', function (Request $request) {
+    return '<html>
+    <head>
+        <title>privacy policy</title>
+    </head>
+    <body>
+        <h1>Privacy</h1>
+        A privacy policy is a statement or a legal document (in privacy law) that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client\'s data. ... Their privacy laws apply not only to government operations but also to private enterprises and commercial transactions.
+    </body>
+    </html>';
 });
