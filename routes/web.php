@@ -33,3 +33,31 @@ $router->get('/monitor', function (\Illuminate\Http\Request $request) {
     }
     return view('monitor')->with(['words' => \App\Word::all()]);
 });
+
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| WH
+|--------------------------------------------------------------------------
+ */
+
+use Illuminate\Http\Request;
+
+Route::post('/wh', function (Request $request) {
+    \App\Facebook::create([
+        'payload' => $request->all(),
+    ]);
+    return 'ok';
+});
+
+Route::get('/wh', function (Request $request) {
+    info($request->all());
+    $challenge = $request->hub_challenge;
+    info($challenge);
+    return $challenge;
+});
